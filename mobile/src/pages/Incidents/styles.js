@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../theme';
 import Constants from 'expo-constants';
 
 export default StyleSheet.create({
     container: {
         flex :1 ,
         paddingHorizontal : 24,    
-        paddingTop: Constants.statusBarHeight + 20,
+        paddingTop: Constants.statusBarHeight + 20,        
     },
     header: {
         flexDirection: 'row',
@@ -13,8 +14,8 @@ export default StyleSheet.create({
         alignItems: 'center',        
     },
     headerText: {
-        fontSize: 15,
-        color: '#737380'
+        fontSize: 15,        
+        color: colors.secondary
     },
     headerTextBold: {
         fontWeight: 'bold',
@@ -22,14 +23,14 @@ export default StyleSheet.create({
     title: {
         fontSize: 30,
         marginBottom: 16,
-        marginTop: 48,
-        color: '#13131a',
+        marginTop: 48,        
+        color: colors.primary,
         fontWeight: 'bold'
     },
     description: {
         fontSize: 16,
         lineHeight: 24,
-        color: '#737380'
+        color: colors.secondary
     },
     incidentsList:{
         marginTop: 32,
@@ -37,20 +38,20 @@ export default StyleSheet.create({
     incident:{
         padding: 24,
         borderRadius: 8,
-        backgroundColor: '#FFF',
+        backgroundColor: colors.quaternary,
         marginBottom: 16,
 
     },
     incidentProperty: {
         fontSize: 14,
-        color: '#41414D',
+        color: colors.secondary,
         fontWeight: 'bold'
     },
     incidentValue: {
         marginTop: 8,
         fontSize: 15,
         marginBottom: 24,
-        color: '#737380'
+        color: colors.secondary
     },
     detailsButton: {
         flexDirection: 'row',
@@ -58,7 +59,7 @@ export default StyleSheet.create({
         alignItems: 'center',
     },
     detailsButtonText: {
-        color: '#e02041',
+        color: colors.tertiary,
         fontSize: 15,
         fontWeight: 'bold'
     }

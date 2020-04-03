@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+import { colors } from '../../theme';
 
 export default StyleSheet.create({
     container: {
@@ -15,13 +16,13 @@ export default StyleSheet.create({
     incident:{
         padding: 24,
         borderRadius: 8,
-        backgroundColor: '#FFF',
+        backgroundColor: colors.quaternary,
         marginBottom: 16,
         marginTop: 25
     },
     incidentProperty: {
         fontSize: 14,
-        color: '#41414D',
+        color: colors.secondary,
         fontWeight: 'bold',
         marginTop: 24,
 
@@ -29,23 +30,23 @@ export default StyleSheet.create({
     incidentValue: {
         marginTop: 8,
         fontSize: 15,        
-        color: '#737380'
+        color: colors.secondary
     },
     contactBox: {
         padding: 24,
         borderRadius: 8,
-        backgroundColor: '#FFF',
+        backgroundColor: colors.quaternary,
         marginBottom: 16,        
     },
     heroTitle: {
         fontWeight: 'bold',
         fontSize: 20,
-        color: '#13131a',
+        color: colors.primary,
         lineHeight: 30,
     },
     heroDescription: {
         fontSize: 15,
-        color: '#737380',
+        color: colors.secondary,
         marginTop: 16
     },
     actions: {
@@ -54,7 +55,7 @@ export default StyleSheet.create({
         justifyContent: 'space-between',
     },
     action: {
-        backgroundColor: '#E02041',
+        backgroundColor: colors.tertiary,
         borderRadius: 8,
         height: 50,
         width: '48%',
@@ -62,7 +63,7 @@ export default StyleSheet.create({
         alignItems: 'center'
     },
     actionText: {
-        color: '#FFF',
+        color: colors.quaternary,
         fontSize: 15
     },
 
