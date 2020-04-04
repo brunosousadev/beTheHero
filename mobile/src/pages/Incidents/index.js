@@ -14,29 +14,34 @@ export default function Incidents() {
     const [total, setTotal] = useState(0);
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
-
+    const [flagNetwork, setFlagNetwork] = useState(false);
 
     const navigation = useNavigation();
 
     function navigateToDetails(incident) {
-        navigation.navigate('Detail', {incident} );
+        navigation.navigate('Detail', { incident });
     }
 
     async function loadIncidents() {
-        if(loading) return;
+        try {
+            if (loading) return;
 
-        if(total > 0  && incidents.length == total) return;
+            if (total > 0 && incidents.length == total) return;
 
-        setLoading(true);
+            setLoading(true);
 
-        const response = await api.get('incidents', {
-            params: { page }
-        });
-                
-        setIncidents([... incidents, ...response.data]);        
-        setTotal(response.headers['x-total-count']);
-        setPage(page+1);
-        setLoading(false);
+            const response = await api.get('incidents', {
+                params: { page }
+            });
+
+            setIncidents([...incidents, ...response.data]);
+            setTotal(response.headers['x-total-count']);
+            setPage(page + 1);
+            setLoading(false);
+            setFlagNetwork(false);
+        } catch (error) {
+            setFlagNetwork(true);
+        }
     }
     useEffect(() => {
         loadIncidents();
@@ -52,7 +57,12 @@ export default function Incidents() {
             </View>
 
             <Text style={styles.title} >Bem-vindo</Text>
-            <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia</Text>
+
+            {flagNetwork ?
+                <Text style={styles.descriptionInfor}>Não foi possível carregar os casos</Text> 
+                : 
+                <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia</Text>
+            }
             <FlatList
                 style={styles.incidentsList}
                 data={incidents}
@@ -76,7 +86,7 @@ export default function Incidents() {
                         </Text>
                         <TouchableOpacity
                             style={styles.detailsButton}
-                            onPress={()=> navigateToDetails(incident)}>
+                            onPress={() => navigateToDetails(incident)}>
                             <Text style={styles.detailsButtonText}> Ver mais detalhes </Text>
                             <Feather name="arrow-right" size={16} color='#e02041' />
                         </TouchableOpacity>

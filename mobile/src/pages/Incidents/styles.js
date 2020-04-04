@@ -32,6 +32,13 @@ export default StyleSheet.create({
         lineHeight: 24,
         color: colors.secondary
     },
+    descriptionInfor: {
+        fontSize: 18,
+        lineHeight: 24,
+        color: colors.tertiary,
+        marginStart: 20,
+        fontWeight: 'bold'
+    },
     incidentsList:{
         marginTop: 32,
     },
