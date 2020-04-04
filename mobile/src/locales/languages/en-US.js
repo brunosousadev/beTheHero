@@ -10,7 +10,11 @@ const en = {
     SeeMoreDetails: 'See more details',
     SaveDay: 'Save the day!',
     BeHeroCase: 'Be the hero in that case.',
-    contact: 'Contact:'
+    contact: 'Contact:',
+    HeroCase:'Hero of the case:',
+    Hello: 'Hello',
+    descriptionPartOne: " I'm getting in touch because I would like to help in the case ",
+    descriptionPartTwo : ' with the value of'
 };
 
 export default  en;
