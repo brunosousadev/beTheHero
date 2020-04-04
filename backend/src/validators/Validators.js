@@ -34,10 +34,7 @@ module.exports.createIncident = celebrate({
 module.exports.getIncidents = celebrate({
     [Segments.QUERY]: Joi.object().keys({
         page: Joi.number(),
-    }),
-    [Segments.HEADERS] : Joi.object({
-        authorizatio: Joi.string().required()
-    }).unknown()
+    }),    
 });
 
 

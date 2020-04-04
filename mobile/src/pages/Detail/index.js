@@ -5,7 +5,9 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import logoImg from '../../assets/logo.png';
 import * as MailComposer from 'expo-mail-composer';
 
-
+import {currencyFormatting} from '../../utils/utils';
+import {translate} from '../../locales';
+import {colors } from '../../theme';
 import styles from './styles';
 
 export default function Detail() {
@@ -31,32 +33,29 @@ export default function Detail() {
         Linking.openURL(`whatsapp://send?phone=${incident.whatsapp}&text=${message}`);
     }
 
-
     return (
         <View style={styles.container}>
             <View style={styles.header}>
                 <Image source={logoImg} />
                 <TouchableOpacity onPress={navigateBack}>
-                    <Feather name="arrow-left" size={28} color='#e02041' />
+                    <Feather name="arrow-left" size={28} color={colors.tertiary} />
                 </TouchableOpacity>
             </View>
 
             <View style={styles.incident}>
-                <Text style={[styles.incidentProperty, { marginTop: 0 }]}>ONG: </Text>
+                <Text style={[styles.incidentProperty, { marginTop: 0 }]}>{translate('NGO')}:</Text>
                 <Text style={styles.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
 
-                <Text style={styles.incidentProperty}>CASO: </Text>
+                <Text style={styles.incidentProperty}>{translate('CASES')}</Text>
                 <Text style={styles.incidentValue}>{incident.title}</Text>
 
-                <Text style={styles.incidentProperty}>VALOR: </Text>
-                <Text style={styles.incidentValue}>{Intl.NumberFormat('pt-BR',
-                    { style: 'currency', currency: 'BRL' }
-                ).format(incident.value)}</Text>
+                <Text style={styles.incidentProperty}>{translate('VALUE')}: </Text>
+                <Text style={styles.incidentValue}>{currencyFormatting(incident.value)}</Text>
             </View>
             <View style={styles.contactBox}>
-                <Text style={styles.heroTitle}> Salve o dia!</Text>
-                <Text style={styles.heroTitle}> Seja o herói desse caso.</Text>
-                <Text style={styles.heroDescription}>Entre em contato:</Text>
+                <Text style={styles.heroTitle}>{translate('SaveDay')}</Text>
+                <Text style={styles.heroTitle}>{translate('BeHeroCase')}</Text>
+                <Text style={styles.heroDescription}>{translate('contact')}</Text>
                 <View style={styles.actions}>
                     <TouchableOpacity style={styles.action} onPress={sendWhatsapp} >
                         <Text style={styles.actionText}>WhatsApp</Text>
