@@ -29,7 +29,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-OProjeto desenvolvido durante a semana OmniStack 11.0 rocket [ Rocketseat ]. O projeto envolve o desenvolvimento de uma aplicação do zero, trabalhado seu back-end, front-end e Mobile.
+OP rojeto desenvolvido durante a semana OmniStack 11.0 rocket [ Rocketseat ]. O projeto envolve o desenvolvimento de uma aplicação do zero, trabalhado seu back-end, front-end e Mobile.
 
 BeTheHero, uma aplicação que tem o de objetivo facilitar o contato com ONG's para contribuições financeiras.
 
