@@ -1,4 +1,6 @@
-
+<h1 align="center">
+    <img alt="BeTheHero" title="#BeTheHero" src="frontend/src/assets/logo.svg" width="250px" />
+</h1>
 
 <h4 align="center">
   🚀 Semana OmniStack 11.0
